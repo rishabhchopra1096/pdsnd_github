@@ -142,10 +142,11 @@ def time_stats(df):
     print("The most common month for travelling is:")
     
     # get the most common month using the .value_counts()
-    month_mode = df['month'].value_counts().index[0]
+    month_value_counts = df['month'].value_counts()
+    month_mode = month_value_counts.index[0]
     
     # get the count for the most common month 
-    month_mode_count = df['month'].value_counts().iloc[0]
+    month_mode_count = month_value_counts.iloc[0]
     
     # month_mode - 1 implies that months in df['month'] 
     # start from 1, not 0. 
@@ -156,10 +157,11 @@ def time_stats(df):
     print("The most common day of week for travelling is: ")
     
     # get the most common day_of_week using .value_counts()
-    day_of_week_mode = df['day_of_week'].value_counts().index[0]
+    day_value_counts = df['day_of_week'].value_counts()
+    day_of_week_mode = day_value_counts.index[0]
     
     # get the count for most common day_of_week
-    day_of_week_mode_count = df['day_of_week'].value_counts().iloc[0]
+    day_of_week_mode_count = day_value_counts.iloc[0]
     
     # day_of_week start from 0 itself. 
     print(days[day_of_week_mode].title(), "with a count of", day_of_week_mode_count, ".\n")
@@ -168,9 +170,10 @@ def time_stats(df):
     # display the most common start hour
     print("The most common hour for travelling is: ")
     # Getting the most common hour using .value_counts() 
-    hour_mode = df["Start Time"].dt.hour.value_counts().index[0]
+    hour_value_counts = df["Start Time"].dt.hour.value_counts()
+    hour_mode = hour_value_counts.index[0]
     # Getting the count of the most common hour using .value_counts()
-    hour_mode_count = df["Start Time"].dt.hour.value_counts().iloc[0]
+    hour_mode_count = hour_value_counts.iloc[0]
     print(str(hour_mode)+":00 hours with a count of", hour_mode_count ,".\n" )
 
 
