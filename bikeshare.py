@@ -207,11 +207,13 @@ def station_stats(df):
 
     # Find the most common trip: 
     for trip in trips_count:
+        # if the trip count of current trip is the max of all trip count
         if trips_count[trip] == max(trips_count.values()):
             trip_mode = trip
             # break the loop as soon as we get the most common trip.
             break 
 
+    # print the most popular trip
     print("The most popular trip is: ")
     print("{} to {} with a count of {} trips".format(*trip_mode, \
         max(trips_count.values())))
@@ -313,10 +315,15 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
+        # show the time stats
         time_stats(df)
+        # show the station stats
         station_stats(df)
+        # show the trip_duration stats
         trip_duration_stats(df)
+        # show the duration stats
         user_stats(df)
+        # ask the use if they want to see the data 
         view_data(df,0)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
