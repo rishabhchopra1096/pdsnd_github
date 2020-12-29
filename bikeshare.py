@@ -9,7 +9,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 def get_month(m):
     """
-    INPUT: Takes in a variable string
+    Args: Takes in a variable string
     Returns: The month name provided by the user
     assigned to the variable string
     """
@@ -21,8 +21,8 @@ def get_month(m):
 
 def get_day(d):
     """
-    INPUT: Takes in a variable string. 
-    OUTPUT: Returns the day name provided by the user
+    Args: Takes in a variable string. 
+    Returns: Returns the day name provided by the user
     assigned to the variable string.
     """
     while d not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', \
